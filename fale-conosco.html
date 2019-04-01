@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" href="_css/estilo.css"/>
+	<link rel="stylesheet" href="_css/form.css"/>
+
+	<Title> Tudo sobre Google Glass </Title>
+</head>
+<script language="javascript" src="_javascript/funcoes.js"></script>
+<script>
+	function calc_total(){
+		var qtd = parseInt(document.getElementById('cQtd').value);
+		var total = qtd * 1500;
+		document.getElementById('cPreco').value = total;
+	}
+</script>
+<body>
+	<div id="interface"/>
+	<header id="cabecalho">
+	<hgroup><!-- usar sempre que quiser agrupar -->
+		<h1>Google Glass</h1>
+		<h2>A revolução do Google está chegando</h2>
+	</hgroup>
+	<img id="icone" src="_imagens\glass-oculos-preto-peq.png"/>
+	<nav id="menu">
+	<h1>Menu Principal</h1>
+		<ul>
+			<li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')
+			"><a href="index.html">Home</a></li>
+			<li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')
+			"><a href="specs.html">Especificações</a></li>
+			<li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')
+			"><a href="fotos.html">Fotos</a></li>
+		  <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')
+			"><a href="multimidia.html">Multimídia</a></li>
+			<li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')
+			"><a href="fale-conosco.html">Fale conosco</a></li>
+		</ul>
+	</nav>
+	</header>
+
+	<header id="cabecalho-artigo">
+		<hgroup>
+			<h3>Fale Conosco >&nbsp;Contato</h3> <!-- &nbsp; significa que vai aparecer um espaço em branco -->
+			<h1>Formulário de Contato</h1>
+			<h2>por Lindsay Ferreira</h2>
+			<h3 class="atualizado">Atualizado em 17/Jan/2019</h3>
+	</hgroup>
+</header>
+
+<form id="fContato" action=" mailto:lindsayfrancele@hotmail.com" method="post" oninput="calc_total();">
+	<fieldset>
+		<legend id="user">Identificação do Usuário</legend>
+			<p><label for="cNome">Nome:</label>
+				<input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo">
+			</p>
+			<p><label for="cSenha">Senha:</label>
+				<input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 digitos">
+			</p>
+			<p><label for="cEmail">E-mail:</label>
+				<input type="email" name="tEmail" id="cEmail" size="20" maxlength="40" placeholder="e-mail">
+			</p>
+			<fieldset id="sex">
+				<legend>Sexo:</legend>
+					<input type="radio" name="tSexo" id="cMasc"><label for="cMasc">Masculino</label><br/>
+					<input type="radio" name="tSexo" id="cFem"><label for="cFem">Feminino</label><br/>
+					<input type="radio" name="tSexo" id="cNBin"><label for="cNBin">Não Binário</label><br/>
+					<input type="radio" name="tSexo" id="cOutro"><label for="cOutro">Outro</label><br/>
+			</fieldset>
+			<p><label for="cdata">Data de Nascimento:</label><input type="date" name="tData" id="cData"></p>
+	</fieldset>
+
+	<fieldset>
+		<legend id="adress">	Endereço do Usuário </legend>
+			<p><label for="cLogra">Logradouro:</label><input type="text" name="tLogra" size="20" maxlength="40" id="cLogra" placeholder="Rua, Av, Trav, ..."> </p>
+			<p> <label for="cNum">Número:</label><input type="number" min="0" max="999999"  name="tNum" id="cNum" placeholder="Número" > </p>
+			<p><label for="cEst">Estado:</label>
+				<select id="cEst" name="tEst">
+					<option>AC</option>
+					<option>AL</option>
+					<option>AP</option>
+					<option>AM</option>
+					<option>BA</option>
+					<option>CE</option>
+					<option>DF</option>
+					<option>ES</option>
+					<option>GO</option>
+					<option>MA</option>
+					<option>MT</option>
+					<option>MS</option>
+					<option>MG</option>
+					<option>PA</option>
+					<option>PB</option>
+					<option>PR</option>
+					<option>PE</option>
+					<option>PI</option>
+					<option>RJ</option>
+					<option>RN</option>
+					<option>RS</option>
+					<option>RO</option>
+					<option>RR</option>
+					<option>SC</option>
+					<option>SP</option>
+					<option>SE</option>
+					<option>TO</option>
+				</select>
+			</p>
+			<p><label for="cCid">Cidade:</label>
+				<input type="text" name="tCid" id="cCid" size="20" maxlength="40" placeholder="Cidade">
+			</p>
+	</fieldset>
+
+	<fieldset>
+		<legend id="messengers">Mensagem do Usuário</legend>
+					<p><label for="cUrg"> Grau de Urgência:</label>
+						Mín<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Max
+					</p>
+					<p><label for="cMens">Mensagem:</label>
+						<textarea name="tMens" id="cMens" rows="5" cols="45" placeholder="Mensagem">
+
+						</textarea>
+					</p>
+		</fieldset>
+
+	<fieldset>
+		<legend id="ineed">Quero um Google Glass</legend>
+					<p> <input type="checkbox" name="tAdiq" id="cAdiq">
+						<label for="cAdiq">Gostaria de adquirir um Google Glass quando disponível</label>
+					</p>
+					<p><label for="cCor">Cor:</label>
+						<input type="color" name="tCor" id="cCor" value="#000000">
+					</p>
+					<p><label for="cQtd">Quantidade:</label>
+						<input type="number" name="tQtd" value="cQtd" min="1" max="5">
+					</p>
+					<p><label for="cPreco">Preço Total: R$</label>
+						<input type="text" name="tPreco" id="cPreco" placeholder="Total a Pagar" readonly>
+					</p>
+	</fieldset>
+
+	<input type="image" src="_imagens/botao-enviar.png" name="enviar">
+
+</form>
+
+<footer id="rodape">
+ <p>Copyright &copy; 2019 - by Lindsay Ferreira </p>
+ <ul>
+	 <li> <a href="https://www.facebook.com/linferreira" target="_blank">Facebook </a> </li>
+	 <li> <a href="https://twitter.com/SemLohan" target="_blank"> Twitter </a> </li>
+	</ul>
+</footer>
+</div>
+</body>
+</html>
